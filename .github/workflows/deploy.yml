@@ -46,5 +46,5 @@ jobs:
         run: |
           set -euo pipefail
           rsync -azv --delete \
-            -e "ssh -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -p $DEPLOY_PORT" \
+            -e "ssh -p $DEPLOY_PORT" \
             ./ "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/"
