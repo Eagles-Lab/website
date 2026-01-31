@@ -55,5 +55,6 @@ jobs:
             --exclude ".gitignore" \
             --exclude ".DS_Store" \
             --exclude "Thumbs.db" \
+            --exclude ".vscode/" \
             -e "ssh -p $DEPLOY_PORT" \
             ./ "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/"
