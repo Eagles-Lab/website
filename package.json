@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "preview:pretty": "bash scripts/preview-pretty.sh"
   },
   "devDependencies": {
     "vite": "^6.0.0"

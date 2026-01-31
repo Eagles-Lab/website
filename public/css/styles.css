@@ -377,12 +377,20 @@ body {
   gap: 16px;
   animation: floating 3s ease-in-out infinite;
   transition: var(--transition-smooth);
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .floating-card:hover {
   transform: translateY(-5px);
   border-color: var(--accent-purple);
   box-shadow: var(--shadow-glow);
+}
+
+.floating-card:focus-visible {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 3px;
 }
 
 .floating-card.card-1 {
@@ -428,6 +436,71 @@ body {
 .card-text {
   font-weight: 600;
   font-size: 18px;
+}
+
+.service-page {
+  padding: 140px 0 100px;
+}
+
+.service-back {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: var(--transition-smooth);
+}
+
+.service-back:hover {
+  color: var(--text-primary);
+  border-bottom-color: rgba(255, 255, 255, 0.25);
+}
+
+.service-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
+
+.service-subtitle {
+  color: var(--text-secondary);
+  font-size: 18px;
+  max-width: 720px;
+  margin-bottom: 48px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.service-card {
+  background: var(--bg-card);
+  backdrop-filter: var(--blur-glass);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 28px 24px;
+}
+
+.service-card h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.service-card ul {
+  padding-left: 18px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.service-cta {
+  display: flex;
+  gap: 16px;
 }
 
 @keyframes floating {
@@ -1482,6 +1555,14 @@ section {
 
   .hero-visual {
     display: none;
+  }
+
+  .service-title {
+    font-size: 40px;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
   }
 
   .pain-grid {

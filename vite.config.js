@@ -92,6 +92,28 @@ function htmlIncludePlugin() {
 
 export default defineConfig({
   plugins: [htmlIncludePlugin()],
+  build: {
+    rollupOptions: {
+      input: {
+        index: path.resolve(process.cwd(), "index.html"),
+        internship: path.resolve(
+          process.cwd(),
+          "services/internship/index.html",
+        ),
+        skills: path.resolve(process.cwd(), "services/skills/index.html"),
+        campusRecruit: path.resolve(
+          process.cwd(),
+          "services/campus-recruit/index.html",
+        ),
+        postgraduateInterview: path.resolve(
+          process.cwd(),
+          "services/postgraduate-interview/index.html",
+        ),
+        contest: path.resolve(process.cwd(), "services/contest/index.html"),
+        community: path.resolve(process.cwd(), "services/community/index.html"),
+      },
+    },
+  },
   server: {
     // dev 端口：固定端口便于文档/脚本引用；strictPort=true 避免自动换端口造成“看错环境”
     port: 5173,
