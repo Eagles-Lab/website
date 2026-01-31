@@ -1554,7 +1554,37 @@ section {
   }
 
   .hero-visual {
-    display: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    height: auto;
+    margin-top: 24px;
+    opacity: 1;
+    animation: none;
+  }
+
+  .floating-card {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 16px;
+    animation: none;
+  }
+
+  .floating-card.card-1,
+  .floating-card.card-2,
+  .floating-card.card-3,
+  .floating-card.card-4,
+  .floating-card.card-5,
+  .floating-card.card-6 {
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
   }
 
   .service-title {
@@ -1629,6 +1659,18 @@ section {
 @media (max-width: 480px) {
   .hero-title {
     font-size: 32px;
+  }
+
+  .hero-visual {
+    grid-template-columns: 1fr;
+  }
+
+  .card-icon {
+    font-size: 28px;
+  }
+
+  .card-text {
+    font-size: 16px;
   }
 
   .section-title {
