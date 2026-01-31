@@ -1,0 +1,41 @@
+.header.is-scrolled {
+  background: rgba(10, 10, 31, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.js-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.js-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.testimonial-track.is-paused {
+  animation-play-state: paused;
+}
+
+.floating-card {
+  --parallax-x: 0px;
+  --parallax-y: 0px;
+}
+
+.floating-card:hover {
+  animation-name: none;
+  transform: translate(var(--parallax-x), var(--parallax-y)) translateY(-5px);
+}
+
+@keyframes floating {
+  0%,
+  100% {
+    transform: translate(var(--parallax-x), var(--parallax-y)) translateY(0);
+  }
+  50% {
+    transform: translate(var(--parallax-x), var(--parallax-y)) translateY(-20px);
+  }
+}

@@ -1,0 +1,81 @@
+<!-- Contact CTA Section -->
+<section class="contact-cta" id="contact">
+  <div class="container">
+    <div class="cta-content">
+      <h2>还在犹豫？先和顾问聊聊</h2>
+      <p>免费咨询，专业顾问为你定制学习方案</p>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="你的姓名" required />
+        </div>
+        <div class="form-group">
+          <input
+            type="tel"
+            name="phone"
+            placeholder="手机号码"
+            required
+            pattern="[0-9]{11}"
+          />
+        </div>
+        <div class="form-group">
+          <select name="course" required>
+            <option value="">选择意向服务</option>
+            <option value="study">学业辅导</option>
+            <option value="advanced">升学辅导</option>
+            <option value="career">就业辅导</option>
+            <option value="unsure">还不确定</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <textarea
+            name="message"
+            placeholder="其他需求（选填）"
+            rows="3"
+          ></textarea>
+        </div>
+        <button type="submit" class="submit-button">
+          <span>提交咨询</span>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path
+              d="M7 3L14 10L7 17"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <p class="form-note">提交后，我们将在30分钟内回电</p>
+      </form>
+
+      <div class="or-divider">
+        <span>或</span>
+      </div>
+
+      <div class="contact-qr-codes">
+        <div class="contact-qr-item">
+          <div class="qr-placeholder">
+            <img
+              class="contact-qr-image"
+              src="assets/images/contacts/vx.png"
+              alt="微信二维码"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <div class="contact-qr-item">
+          <div class="qr-placeholder">
+            <img
+              class="contact-qr-image"
+              src="assets/images/contacts/qq.png"
+              alt="QQ二维码"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
