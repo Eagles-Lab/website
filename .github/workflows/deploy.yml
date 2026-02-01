@@ -57,7 +57,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          ssh -p $DEPLOY_PORT $DEPLOY_USER@$DEPLOY_HOST "mkdir -p $DEPLOY_PATH"
+          ssh -p $DEPLOY_PORT $DEPLOY_USER@$DEPLOY_HOST "mkdir -p $DEPLOY_PATH $DEPLOY_PATH/assets/images"
 
       - name: Sync files
         shell: bash
@@ -74,5 +74,12 @@ jobs:
             --exclude ".DS_Store" \
             --exclude "Thumbs.db" \
             --exclude ".vscode/" \
+            --exclude "assets/images/" \
             -e "ssh -p $DEPLOY_PORT" \
             ./dist/ "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/"
+
+          rsync -azv --delete \
+            --exclude ".DS_Store" \
+            --exclude "Thumbs.db" \
+            -e "ssh -p $DEPLOY_PORT" \
+            ./public/assets/images/ "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/assets/images/"
