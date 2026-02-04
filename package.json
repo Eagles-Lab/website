@@ -12,6 +12,7 @@
     "preview:pretty": "bash scripts/preview-pretty.sh"
   },
   "devDependencies": {
+    "sharp": "^0.34.5",
     "vite": "^6.0.0"
   }
 }
