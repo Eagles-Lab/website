@@ -7,6 +7,14 @@
 
 ## [Unreleased]
 
+### 移除
+
+- 移除 FAQ（常见问题）功能模块
+  - 移除页面结构中的 FAQ 区域描述（CLAUDE.md）
+  - 移除 FAQ 测试清单（docs/TESTING.md）
+  - 移除 FAQ 样式（public/css/styles.css，约 58 行）
+  - 移除 FAQ 交互逻辑（public/js/script.js，initFaqAccordion 函数及调用）
+
 ### 待完成
 
 - 真实学员案例（照片 + 详细信息）

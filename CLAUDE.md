@@ -78,7 +78,7 @@ npx eslint public/js/script.js         # JS 检查
 │   │   ├── styles.css           # 主样式 - 流体智能风格实现
 │   │   └── maintainability.css  # 交互/状态覆写层（减少行内样式耦合）
 │   ├── js/                 # 脚本目录
-│   │   └── script.js   # 交互脚本 - FAQ、表单、滚动动画等
+│   │   └── script.js   # 交互脚本 - 表单、滚动动画等
 │   └── assets/             # 静态资源目录
 │       └── images/         # 图片资源（Logo、插画等）
 ├── src/            # 源码拆分目录
@@ -148,7 +148,7 @@ npx eslint public/js/script.js         # JS 检查
 
 常用 scope 示例：
 
-- `hero` / `trust` / `faq` / `footer` 等（对应页面区域）
+- `hero` / `trust` / `contact` / `footer` 等（对应页面区域）
 - `styles` / `script`（对应文件）
 - `deploy` / `build`（对应构建/部署）
 - `images` / `assets`（对应资源）
@@ -281,9 +281,8 @@ npx @squoosh/cli --webp auto *.png
 5. **Trust（信任背书）** - 10年历史 + 统计数据 + 合作企业 + 合作高校 + 资质认证 + 师资力量
 6. **Success Stories（学员案例）** - 6个真实学员案例
 7. **Testimonials（学员评价）** - 自动轮播评价
-8. **FAQ（常见问题）** - 手风琴交互
-9. **Contact CTA（咨询表单）** - 表单 + 微信二维码
-10. **Footer（页脚）** - 导航链接、联系方式、备案信息
+8. **Contact CTA（咨询表单）** - 表单 + 微信二维码
+9. **Footer（页脚）** - 导航链接、联系方式、备案信息
 
 ### 技术栈
 
@@ -502,9 +501,9 @@ element.classList.add('error-state');
 
 ```javascript
 // ❌ 错误做法（元素不存在时会报错）
-const faqItems = document.querySelectorAll('.faq-item');
-faqItems.forEach(item => {
-  item.addEventListener('click', handleClick);
+const cards = document.querySelectorAll('.service-card');
+cards.forEach(card => {
+  card.addEventListener('click', handleClick);
 });
 ```
 
@@ -512,10 +511,10 @@ faqItems.forEach(item => {
 
 ```javascript
 // ✅ 正确做法
-const faqItems = document.querySelectorAll('.faq-item');
-if (faqItems.length > 0) {
-  faqItems.forEach(item => {
-    item.addEventListener('click', handleClick);
+const cards = document.querySelectorAll('.service-card');
+if (cards.length > 0) {
+  cards.forEach(card => {
+    card.addEventListener('click', handleClick);
   });
 }
 ```
@@ -670,19 +669,13 @@ git commit -m "添加环境变量"
 - 在 `public/js/script.js` 的 `initScrollReveal` 中实现
 - 元素进入视口时触发 `fadeInUp` 效果
 
-### 4. FAQ 手风琴
-
-- 点击问题展开/收起答案
-- 使用 `max-height` 过渡动画
-- 同时只能打开一个问题
-
-### 5. 表单验证
+### 4. 表单验证
 
 - 手机号正则验证：`/^1[3-9]\d{9}$/`
 - 所有必填字段使用 `required` 属性
 - 提交后显示成功提示（需对接后端）
 
-### 6. 移动端导航
+### 5. 移动端导航
 
 - 汉堡菜单图标（`.mobile-toggle`）
 - 点击展开全屏菜单（`.nav-menu.active`）

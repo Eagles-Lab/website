@@ -59,32 +59,6 @@
     });
   };
 
-  const initFaqAccordion = () => {
-    const items = $$(".faq-item");
-    if (!items.length) return;
-
-    items.forEach((item) => {
-      const question = $(".faq-question", item);
-      const answer = $(".faq-answer", item);
-      if (!question || !answer) return;
-
-      question.addEventListener("click", () => {
-        const isActive = item.classList.contains("active");
-
-        items.forEach((faq) => {
-          faq.classList.remove("active");
-          const ans = $(".faq-answer", faq);
-          if (ans) ans.style.maxHeight = "0";
-        });
-
-        if (!isActive) {
-          item.classList.add("active");
-          answer.style.maxHeight = `${answer.scrollHeight}px`;
-        }
-      });
-    });
-  };
-
   const initContactForm = () => {
     const contactForm = $("#contactForm");
     if (!contactForm) return;
@@ -367,7 +341,6 @@
 
   onReady(() => {
     initScrollReveal();
-    initFaqAccordion();
     initContactForm();
     initMobileNav();
     initHeaderScrollState();
