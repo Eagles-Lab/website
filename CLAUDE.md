@@ -22,14 +22,14 @@ npx eslint public/js/script.js         # JS 检查
 
 ### 关键路径
 
-| 类型 | 路径 | 说明 |
-|------|------|------|
-| 主页面 | `index.html` | 页面骨架（通过 include 组合） |
-| HTML 片段 | `src/html/sections/` | 各区域 HTML 模块 |
-| 样式 | `public/css/styles.css` | 主样式文件 |
-| 交互 | `public/js/script.js` | 主脚本文件 |
-| 图片资源 | `public/assets/images/` | 所有图片素材 |
-| 服务详情页 | `services/<slug>/index.html` | 6 个服务详情页 |
+| 类型       | 路径                         | 说明                          |
+| ---------- | ---------------------------- | ----------------------------- |
+| 主页面     | `index.html`                 | 页面骨架（通过 include 组合） |
+| HTML 片段  | `src/html/sections/`         | 各区域 HTML 模块              |
+| 样式       | `public/css/styles.css`      | 主样式文件                    |
+| 交互       | `public/js/script.js`        | 主脚本文件                    |
+| 图片资源   | `public/assets/images/`      | 所有图片素材                  |
+| 服务详情页 | `services/<slug>/index.html` | 6 个服务详情页                |
 
 ### 重要文档
 
@@ -131,18 +131,18 @@ npx eslint public/js/script.js         # JS 检查
 
 ### Type 类型
 
-| Type | 说明 | 示例 |
-|------|------|------|
-| `feat` | 新功能 | `feat(hero): 添加浮动卡片动画效果` |
-| `fix` | Bug 修复 | `fix(form): 修复手机号验证正则错误` |
-| `docs` | 文档变更 | `docs(readme): 更新部署说明` |
-| `style` | 样式调整（不影响代码逻辑） | `style(footer): 调整布局间距` |
+| Type       | 说明                                    | 示例                                 |
+| ---------- | --------------------------------------- | ------------------------------------ |
+| `feat`     | 新功能                                  | `feat(hero): 添加浮动卡片动画效果`   |
+| `fix`      | Bug 修复                                | `fix(form): 修复手机号验证正则错误`  |
+| `docs`     | 文档变更                                | `docs(readme): 更新部署说明`         |
+| `style`    | 样式调整（不影响代码逻辑）              | `style(footer): 调整布局间距`        |
 | `refactor` | 代码重构（既不是新功能也不是 Bug 修复） | `refactor(script): 模块化初始化逻辑` |
-| `perf` | 性能优化 | `perf(images): 图片转 WebP 格式` |
-| `test` | 测试相关 | `test(form): 添加表单验证测试` |
-| `build` | 构建系统或依赖变更 | `build(vite): 升级到 Vite 5.0` |
-| `ci` | CI/CD 配置变更 | `ci(deploy): 优化 rsync 同步策略` |
-| `chore` | 其他不修改源码的变更 | `chore: 更新 .gitignore` |
+| `perf`     | 性能优化                                | `perf(images): 图片转 WebP 格式`     |
+| `test`     | 测试相关                                | `test(form): 添加表单验证测试`       |
+| `build`    | 构建系统或依赖变更                      | `build(vite): 升级到 Vite 5.0`       |
+| `ci`       | CI/CD 配置变更                          | `ci(deploy): 优化 rsync 同步策略`    |
+| `chore`    | 其他不修改源码的变更                    | `chore: 更新 .gitignore`             |
 
 ### Scope 范围（可选）
 
@@ -228,14 +228,14 @@ public/assets/images/
 
 ### 尺寸与质量
 
-| 用途 | 建议尺寸 | 质量 | 大小限制 |
-|------|---------|------|---------|
-| Hero 背景 | 1920x1080 | 80% | ≤ 300KB |
-| 服务卡片图标 | 128x128 | 90% | ≤ 30KB |
-| Logo | 200x80 | 90% | ≤ 50KB |
-| 学员案例照片 | 400x400 | 85% | ≤ 100KB |
-| 缩略图 | 300x200 | 80% | ≤ 50KB |
-| 二维码 | 300x300 | 90% | ≤ 50KB |
+| 用途         | 建议尺寸  | 质量 | 大小限制 |
+| ------------ | --------- | ---- | -------- |
+| Hero 背景    | 1920x1080 | 80%  | ≤ 300KB  |
+| 服务卡片图标 | 128x128   | 90%  | ≤ 30KB   |
+| Logo         | 200x80    | 90%  | ≤ 50KB   |
+| 学员案例照片 | 400x400   | 85%  | ≤ 100KB  |
+| 缩略图       | 300x200   | 80%  | ≤ 50KB   |
+| 二维码       | 300x300   | 90%  | ≤ 50KB   |
 
 ### 优化工具
 
@@ -256,8 +256,8 @@ npx @squoosh/cli --webp auto *.png
 
 ```html
 <picture>
-  <source srcset="/assets/images/hero/banner.webp" type="image/webp">
-  <img src="/assets/images/hero/banner.jpg" alt="描述">
+  <source srcset="/assets/images/hero/banner.webp" type="image/webp" />
+  <img src="/assets/images/hero/banner.jpg" alt="描述" />
 </picture>
 ```
 
@@ -328,7 +328,7 @@ npm run dev
 
 # 构建产物在 dist/，可本地预览构建结果
 npm run build
-npm run preview
+npm run preview:preview
 ```
 
 ### 代码检查
@@ -367,288 +367,6 @@ npx eslint public/js/script.js
 - 避免内联事件处理
 - 所有 DOM 操作在 `DOMContentLoaded` 后执行
 
-## ⛔ 常见错误与陷阱
-
-### HTML 相关
-
-#### ❌ 错误：直接修改 `index.html` 的内容区
-
-```html
-<!-- ❌ 错误做法 -->
-<body>
-  <section id="hero">
-    <!-- 直接在 index.html 中编辑内容 -->
-  </section>
-</body>
-```
-
-✅ **正确做法**：修改 `src/html/sections/hero.html`，Vite 会自动组合。
-
----
-
-#### ❌ 错误：使用相对路径引用静态资源
-
-```html
-<!-- ❌ 错误做法（在子页面 services/skills/index.html 中） -->
-<link rel="stylesheet" href="../../css/styles.css">
-<img src="../../assets/images/logo.png">
-```
-
-✅ **正确做法**：使用绝对路径（从根目录开始）
-
-```html
-<!-- ✅ 正确做法 -->
-<link rel="stylesheet" href="/css/styles.css">
-<img src="/assets/images/logo.png">
-```
-
----
-
-### CSS 相关
-
-#### ❌ 错误：硬编码颜色值
-
-```css
-/* ❌ 错误做法 */
-.card {
-  background: #8b5cf6;
-  color: #ffffff;
-}
-```
-
-✅ **正确做法**：使用 CSS 变量
-
-```css
-/* ✅ 正确做法 */
-.card {
-  background: var(--accent-purple);
-  color: var(--text-primary);
-}
-```
-
----
-
-#### ❌ 错误：使用 `position: absolute` 实现布局
-
-```css
-/* ❌ 错误做法 */
-.card-container {
-  position: relative;
-}
-.card {
-  position: absolute;
-  top: 20px;
-  left: 50px;
-}
-```
-
-✅ **正确做法**：优先使用 Flexbox/Grid
-
-```css
-/* ✅ 正确做法 */
-.card-container {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-```
-
----
-
-#### ❌ 错误：动画使用 `left/top/width/height`
-
-```css
-/* ❌ 错误做法（会触发重排，性能差） */
-@keyframes slide {
-  from { left: 0; }
-  to { left: 100px; }
-}
-```
-
-✅ **正确做法**：使用 `transform` 和 `opacity`（GPU 加速）
-
-```css
-/* ✅ 正确做法 */
-@keyframes slide {
-  from { transform: translateX(0); }
-  to { transform: translateX(100px); }
-}
-```
-
----
-
-### JavaScript 相关
-
-#### ❌ 错误：在 JS 中写行内样式
-
-```javascript
-// ❌ 错误做法
-element.style.display = 'none';
-element.style.background = '#ff0000';
-```
-
-✅ **正确做法**：使用 CSS 类（在 `maintainability.css` 中定义）
-
-```javascript
-// ✅ 正确做法
-element.classList.add('hidden');
-element.classList.add('error-state');
-```
-
----
-
-#### ❌ 错误：未检查元素是否存在就操作
-
-```javascript
-// ❌ 错误做法（元素不存在时会报错）
-const cards = document.querySelectorAll('.service-card');
-cards.forEach(card => {
-  card.addEventListener('click', handleClick);
-});
-```
-
-✅ **正确做法**：先检查是否存在
-
-```javascript
-// ✅ 正确做法
-const cards = document.querySelectorAll('.service-card');
-if (cards.length > 0) {
-  cards.forEach(card => {
-    card.addEventListener('click', handleClick);
-  });
-}
-```
-
----
-
-### 资源相关
-
-#### ❌ 错误：在 `public/` 外放置静态资源
-
-```
-src/
-├── images/      # ❌ 错误位置
-└── html/
-```
-
-✅ **正确做法**：所有静态资源放在 `public/` 下
-
-```
-public/
-├── assets/
-│   └── images/  # ✅ 正确位置
-├── css/
-└── js/
-```
-
-**原因**：Vite 构建时只会复制 `public/` 下的文件到 `dist/`。
-
----
-
-#### ❌ 错误：使用未优化的大尺寸图片
-
-```html
-<!-- ❌ 错误做法（原图 2MB） -->
-<img src="/assets/images/hero-original.jpg">
-```
-
-✅ **正确做法**：压缩并转 WebP
-
-```html
-<!-- ✅ 正确做法（优化后 200KB） -->
-<picture>
-  <source srcset="/assets/images/hero.webp" type="image/webp">
-  <img src="/assets/images/hero.jpg" alt="Hero 背景">
-</picture>
-```
-
----
-
-### 部署相关
-
-#### ❌ 错误：修改后未构建就部署
-
-```bash
-# ❌ 错误做法
-git add .
-git commit -m "更新样式"
-git push  # 直接推送，但 dist/ 没有更新
-```
-
-✅ **正确做法**：GitHub Actions 会自动构建（无需手动构建）
-
-```bash
-# ✅ 正确做法
-git add .
-git commit -m "style(hero): 更新背景渐变色"
-git push  # CI 会自动执行 npm run build
-```
-
----
-
-#### ❌ 错误：提交了 `.env` 文件
-
-```bash
-# ❌ 错误做法
-git add .env
-git commit -m "添加环境变量"
-```
-
-✅ **正确做法**：`.env` 已在 `.gitignore` 中，不应提交
-
-```bash
-# ✅ 正确做法
-# 1. 确保 .env 在 .gitignore 中
-# 2. 提供 .env.example 模板文件
-# 3. 在文档中说明如何配置环境变量
-```
-
----
-
-### 响应式相关
-
-#### ❌ 错误：移动端触摸区域太小
-
-```css
-/* ❌ 错误做法（触摸区域 < 44x44px） */
-.close-button {
-  width: 20px;
-  height: 20px;
-}
-```
-
-✅ **正确做法**：触摸区域 ≥ 44x44px
-
-```css
-/* ✅ 正确做法 */
-.close-button {
-  width: 44px;
-  height: 44px;
-  /* 内部图标可以小一些，但触摸区域要够大 */
-}
-```
-
----
-
-#### ❌ 错误：忘记测试移动端菜单
-
-```javascript
-// ❌ 错误做法：只在桌面端测试
-// 菜单在移动端可能无法关闭或显示异常
-```
-
-✅ **正确做法**：使用 Chrome DevTools 设备模拟器测试
-
-```bash
-# ✅ 测试流程
-1. 打开 Chrome DevTools (F12)
-2. 点击设备工具栏图标（Ctrl+Shift+M）
-3. 选择 iPhone SE / iPhone 12 Pro / iPad 等设备
-4. 测试导航菜单展开/收起、滚动、表单填写等
-```
-
----
-
 ## Key Features
 
 ### 1. 流体背景动画
@@ -683,7 +401,7 @@ git commit -m "添加环境变量"
 
 ## Deployment
 
-### 主要部署方式：GitHub Actions（推荐）
+### 主要部署方式：GitHub Actions
 
 仓库已配置自动化部署工作流 `.github/workflows/deploy.yml`：
 
@@ -697,58 +415,15 @@ git commit -m "添加环境变量"
 
 需要在 GitHub 仓库 Settings → Secrets and variables → Actions 中配置：
 
-| Secret 名称 | 说明 | 示例 |
-|------------|------|------|
-| `DEPLOY_HOST` | 服务器 IP | `110.42.61.198` |
-| `DEPLOY_PORT` | SSH 端口 | `22` |
-| `DEPLOY_USER` | SSH 用户名 | `root` 或 `deploy` |
-| `DEPLOY_PATH` | 部署目录（绝对路径） | `/opt/1panel/www/sites/www.eagleslab.com/index` |
-| `DEPLOY_SSH_KEY` | SSH 私钥 | `-----BEGIN OPENSSH PRIVATE KEY-----...` |
+| Secret 名称      | 说明                 | 示例                                            |
+| ---------------- | -------------------- | ----------------------------------------------- |
+| `DEPLOY_HOST`    | 服务器 IP            | `110.42.61.198`                                 |
+| `DEPLOY_PORT`    | SSH 端口             | `22`                                            |
+| `DEPLOY_USER`    | SSH 用户名           | `root` 或 `deploy`                              |
+| `DEPLOY_PATH`    | 部署目录（绝对路径） | `/opt/1panel/www/sites/www.eagleslab.com/index` |
+| `DEPLOY_SSH_KEY` | SSH 私钥             | `-----BEGIN OPENSSH PRIVATE KEY-----...`        |
 
 **注意**：工作流会自动通过 `ssh-keyscan` 获取 `known_hosts`，无需手动配置。
-
----
-
-### 其他部署方式
-
-<details>
-<summary>Vercel（适合快速预览）</summary>
-
-```bash
-npm i -g vercel
-vercel
-```
-
-优点：零配置、自动 HTTPS、全球 CDN
-缺点：国内访问可能较慢
-
-</details>
-
-<details>
-<summary>Netlify（适合静态站点）</summary>
-
-1. 推送代码到 GitHub
-2. 在 Netlify 连接仓库
-3. 配置构建命令：`npm run build`
-4. 配置发布目录：`dist`
-
-优点：免费额度高、支持表单处理
-缺点：国内访问可能较慢
-
-</details>
-
-<details>
-<summary>阿里云 OSS（适合国内用户）</summary>
-
-1. 创建 OSS Bucket
-2. 开启静态网站托管
-3. 上传 `dist/` 目录所有文件
-4. 绑定自定义域名 + CDN
-
-优点：国内访问快、成本低
-缺点：需手动上传或配置 CI
-
-</details>
 
 ---
 
@@ -760,32 +435,32 @@ vercel
 
 #### 文件大小限制
 
-| 资源类型 | 大小限制 | 说明 |
-|---------|---------|------|
-| 单张图片 | ≤ 200KB | 压缩后（WebP/JPG） |
-| Hero 背景 | ≤ 300KB | 大尺寸背景图例外 |
-| Logo/图标 | ≤ 50KB | 小图标应更小（≤ 30KB） |
-| 首屏 CSS | ≤ 50KB | gzip 压缩后 |
-| 首屏 JS | ≤ 100KB | gzip 压缩后 |
-| 字体文件（单个） | ≤ 100KB | 每个字重 |
-| 总页面大小 | ≤ 2MB | 首次加载（未缓存） |
+| 资源类型         | 大小限制 | 说明                   |
+| ---------------- | -------- | ---------------------- |
+| 单张图片         | ≤ 200KB  | 压缩后（WebP/JPG）     |
+| Hero 背景        | ≤ 300KB  | 大尺寸背景图例外       |
+| Logo/图标        | ≤ 50KB   | 小图标应更小（≤ 30KB） |
+| 首屏 CSS         | ≤ 50KB   | gzip 压缩后            |
+| 首屏 JS          | ≤ 100KB  | gzip 压缩后            |
+| 字体文件（单个） | ≤ 100KB  | 每个字重               |
+| 总页面大小       | ≤ 2MB    | 首次加载（未缓存）     |
 
 #### Lighthouse 目标分数
 
-| 指标 | 目标 | 最低要求 |
-|------|------|---------|
-| Performance | ≥ 95 | ≥ 90 |
-| Accessibility | ≥ 95 | ≥ 90 |
-| Best Practices | ≥ 95 | ≥ 90 |
-| SEO | ≥ 95 | ≥ 90 |
+| 指标           | 目标 | 最低要求 |
+| -------------- | ---- | -------- |
+| Performance    | ≥ 95 | ≥ 90     |
+| Accessibility  | ≥ 95 | ≥ 90     |
+| Best Practices | ≥ 95 | ≥ 90     |
+| SEO            | ≥ 95 | ≥ 90     |
 
 #### 核心 Web 指标（Core Web Vitals）
 
-| 指标 | 目标 | 最低要求 |
-|------|------|---------|
-| LCP（最大内容绘制） | ≤ 2.0s | ≤ 2.5s |
-| FID（首次输入延迟） | ≤ 50ms | ≤ 100ms |
-| CLS（累积布局偏移） | ≤ 0.05 | ≤ 0.1 |
+| 指标                | 目标   | 最低要求 |
+| ------------------- | ------ | -------- |
+| LCP（最大内容绘制） | ≤ 2.0s | ≤ 2.5s   |
+| FID（首次输入延迟） | ≤ 50ms | ≤ 100ms  |
+| CLS（累积布局偏移） | ≤ 0.05 | ≤ 0.1    |
 
 **测试条件**：Fast 3G 网络、中端移动设备（Moto G4）
 
@@ -829,12 +504,17 @@ vercel
 
 ```html
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'GA_MEASUREMENT_ID');
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "GA_MEASUREMENT_ID");
 </script>
 ```
 
@@ -977,4 +657,3 @@ vercel
 **最后更新**: 2026-02-04
 **项目状态**: v1.1 - 持续迭代中
 **文档版本**: 2.0（全面重构）
-
