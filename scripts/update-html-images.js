@@ -39,27 +39,26 @@ const RULES = [
                 '                  /assets/images/certifications/$1.png 800w"\n' +
                 '          sizes="(max-width: 768px) 150px, 300px"',
   },
-  // 为没有 loading 属性的 cert-image 添加 loading="lazy"
+  // 为 cert-image 和 credential-image 添加 loading="lazy"
   {
-    pattern: /class="cert-image"(\s*)>/g,
-    replacement: 'class="cert-image"$1\n          loading="lazy">',
-  },
-  // 为没有 loading 属性的 credential-image 添加 loading="lazy"
-  {
-    pattern: /class="credential-image"(\s*)>/g,
-    replacement: 'class="credential-image"$1\n                  loading="lazy">',
+    pattern: /class="(cert-image|credential-image)"(\s*)>/g,
+    replacement: 'class="$1"$2\n          loading="lazy">',
   },
 ];
 
 // 处理文件
-const files = [
+const FILES = [
   'src/html/sections/trust.html',
   'src/html/pages/contest.html',
   'src/html/pages/skills.html',
 ];
 
 console.log('📝 开始更新 HTML...\n');
-for (const file of files) {
-  updateHtmlFile(file, RULES);
+for (const file of FILES) {
+  if (fs.existsSync(file)) {
+    updateHtmlFile(file, RULES);
+  } else {
+    console.log(`- ${path.basename(file)} (文件不存在)`);
+  }
 }
 console.log('\n✅ 更新完成！');

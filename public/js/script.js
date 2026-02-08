@@ -272,6 +272,16 @@
   };
 
   const initAnalytics = () => {
+    const getSectionLabel = (section) =>
+      section.getAttribute("data-section") ||
+      section.id ||
+      String(section.className || "").split(" ")[0] ||
+      "section";
+
+    const logSectionView = (section) => {
+      console.log("Section viewed:", getSectionLabel(section));
+    };
+
     document.addEventListener("click", (e) => {
       const target = e.target;
       if (!(target instanceof Element)) return;
@@ -287,14 +297,7 @@
     if (!sections.length) return;
 
     if (!("IntersectionObserver" in window)) {
-      sections.forEach((section) => {
-        const label =
-          section.getAttribute("data-section") ||
-          section.id ||
-          String(section.className || "").split(" ")[0] ||
-          "section";
-        console.log("Section viewed:", label);
-      });
+      sections.forEach(logSectionView);
       return;
     }
 
@@ -302,14 +305,8 @@
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
-          const section = entry.target;
-          const label =
-            section.getAttribute("data-section") ||
-            section.id ||
-            String(section.className || "").split(" ")[0] ||
-            "section";
-          console.log("Section viewed:", label);
-          observer.unobserve(section);
+          logSectionView(entry.target);
+          observer.unobserve(entry.target);
         });
       },
       { threshold: 0.5 },

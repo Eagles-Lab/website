@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap");
 
 :root {
+  /* Colors */
   --bg-primary: #0a0a1f;
   --bg-secondary: #12122e;
   --bg-card: rgba(255, 255, 255, 0.05);
@@ -19,12 +20,16 @@
   --accent-cyan: #06b6d4;
   --accent-orange: #f59e0b;
 
+  /* Effects */
   --blur-glass: blur(20px);
   --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.3);
   --shadow-glow: 0 0 40px rgba(139, 92, 246, 0.3);
+  --shadow-glow-strong: 0 12px 40px rgba(139, 92, 246, 0.5);
 
+  /* Transitions */
   --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --transition-fast: all 0.3s ease;
 }
 
 * {
@@ -49,10 +54,39 @@ body {
   overflow-x: hidden;
 }
 
+/* ==================== Utility Classes ==================== */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
+}
+
+/* Glass effect - reusable for cards */
+.glass {
+  background: var(--bg-card);
+  backdrop-filter: var(--blur-glass);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Hover lift effect - reusable */
+.hover-lift {
+  transition: var(--transition-smooth);
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+.hover-lift-lg:hover {
+  transform: translateY(-8px);
+}
+
+/* Gradient text - reusable */
+.gradient-text {
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* ==================== Fluid Background ==================== */
@@ -119,6 +153,47 @@ body {
   75% {
     border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
     transform: translate(50px, 30px) rotate(270deg);
+  }
+}
+
+@keyframes floating {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
@@ -383,7 +458,6 @@ body {
 }
 
 .floating-card:hover {
-  transform: translateY(-5px);
   border-color: var(--accent-purple);
   box-shadow: var(--shadow-glow);
 }
@@ -745,13 +819,13 @@ body {
   background: rgba(255, 255, 255, 0.02);
 }
 
-@keyframes floating {
-  0%,
-  100% {
-    transform: translateY(0);
+/* Marquee animation for scrolling content */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
   }
-  50% {
-    transform: translateY(-20px);
+  to {
+    transform: translateX(-50%);
   }
 }
 
@@ -1030,7 +1104,7 @@ section {
   display: flex;
   gap: 24px;
   width: max-content;
-  animation: partners-marquee 26s linear infinite;
+  animation: marquee-scroll 26s linear infinite;
   will-change: transform;
 }
 
@@ -1072,15 +1146,6 @@ section {
   font-size: 14px;
   text-align: center;
   line-height: 1.2;
-}
-
-@keyframes partners-marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
 }
 
 /* Certifications Section */
@@ -1126,7 +1191,7 @@ section {
   display: flex;
   gap: 24px;
   width: max-content;
-  animation: certifications-marquee 30s linear infinite;
+  animation: marquee-scroll 30s linear infinite;
   will-change: transform;
 }
 
@@ -1142,15 +1207,6 @@ section {
   flex: 0 0 auto;
   width: 220px;
   aspect-ratio: 3 / 2;
-}
-
-@keyframes certifications-marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
 }
 
 .cert-card {
@@ -1309,7 +1365,7 @@ section {
 .testimonial-track {
   display: flex;
   gap: 24px;
-  animation: scroll 30s linear infinite;
+  animation: marquee-scroll 30s linear infinite;
 }
 
 .testimonial-card {
@@ -1351,15 +1407,6 @@ section {
 .author-school {
   font-size: 14px;
   color: var(--text-tertiary);
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
 }
 
 /* ==================== Contact CTA ==================== */
@@ -1643,38 +1690,6 @@ section {
 
 .beian-link:hover {
   color: var(--accent-purple);
-}
-
-/* ==================== Animations ==================== */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
 }
 
 /* ==================== Responsive ==================== */
