@@ -5,6 +5,9 @@
   "engines": {
     "node": ">=22.16.0"
   },
+  "dependencies": {
+    "@hellyeah/x-ray": "^1.2.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
